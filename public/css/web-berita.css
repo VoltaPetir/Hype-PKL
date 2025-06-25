@@ -79,8 +79,8 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: transparent;
+    color: #2c2b30;
     border: none;
     font-size: 32px;
     padding: 5px 10px;
@@ -102,9 +102,10 @@ body {
     text-align: center;
 }
 
-.section h2 {
+.section-title {
     font-size: 2rem;
     font-family: 'Times New Roman', Times, serif;
+    border-left: 4px solid red;
     margin-top: 7vh;
     margin-bottom: 7vh;
     color: #cccccc;
@@ -156,6 +157,8 @@ body {
     font-size: 2rem;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 7vh;
+    border-left: 4px solid #292933;
+    padding-left: 10px;
     color: #cccccc;
     margin: 0;
 }
@@ -260,20 +263,169 @@ body {
 
 .social-icons {
     margin-top: 1vh;
-  }
-  
-  .social-icons a {
+}
+
+.social-icons a {
     margin: 0 10px;
     display: inline-block;
-  }
-  
-  .social-icons img {
+}
+
+.social-icons img {
     width: 24px;
     height: 24px;
     filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.6));
     transition: transform 0.3s ease;
-  }
-  
-  .social-icons img:hover {
+}
+
+.social-icons img:hover {
     transform: scale(1.2);
-  }
+}
+
+.shorts-section {
+    padding: 40px 5vw;
+}
+
+.shorts-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 7vh;
+    color: #c0c0c0;
+    border-left: 4px solid #292933;
+    padding-left: 10px;
+}
+
+.shorts-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.short-card {
+    width: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
+    /* Biar gak putih semua */
+    flex-shrink: 0;
+    margin: 0 px;
+}
+
+.thumb-wrapper {
+    position: relative;
+    height: 260px;
+    /* Tambahin tinggi gambar */
+}
+
+.thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 1px 0 0;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.short-desc {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 0 0 1px 1px;
+}
+
+.short-desc p {
+    font-weight: bold;
+    font-size: 14px;
+    color: #c0c0c0;
+}
+
+.see-all {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 18vw;
+}
+
+.see-all a {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hamburger {
+    font-size: 28px;
+    padding: 16px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    z-index: 1001;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Sembunyikan hamburger saat menu terbuka */
+#menu-toggle:checked+.hamburger {
+    display: none;
+}
+
+/* Offcanvas style */
+.offcanvas {
+    position: fixed;
+    top: 0;
+    left: -200vw;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to right, #232526, #414345);
+    color: white;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.offcanvas nav a {
+    display: block;
+    margin: 16px 0;
+    text-decoration: none;
+    color: #fffbfb;
+    font-weight: 500;
+}
+
+/* Close button inside */
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
+
+/* Open when checkbox checked */
+#menu-toggle:checked~.offcanvas {
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    Add commentMore actions .latest-news-container {
+        flex-direction: column;
+    }
+}
