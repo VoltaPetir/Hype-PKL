@@ -46,7 +46,7 @@ body {
 }
 
 .nav-links li a:hover {
-    color: black;
+    color: blue;
 }
 
 .slider-wrapper {
@@ -119,13 +119,11 @@ body {
 }
 
 .card {
-    background-color: rgba(0, 0, 0, 0.5);
     color: #c0c0c0;
     width: 30vw;
     height: 30vh;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3 ease;
 }
 
 .card img {
@@ -211,11 +209,11 @@ body {
 }
 
 .list {
-    max-width: 200;
     flex: 1;
     margin-top: 7vh;
-    margin-right: 7vw;
-}
+    margin-right: 5vw;
+    padding-left: 1vw; /* kasih sedikit jarak kiri, opsional */
+  }  
 
 .news-section-title {
     font-size: 2rem;
@@ -226,15 +224,16 @@ body {
 
 .item {
     display: flex;
-    text-align: center;
+    align-items: flex-start;
     margin-bottom: 10px;
-    margin-right: 5vw;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
-}
-
-.number {
-    width: 60px;
+    width: 35vw; /* biar item bisa pakai semua lebar parent */
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .number {
+    width: 40px;
     height: 40px;
     background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     color: white;
@@ -245,13 +244,38 @@ body {
     font-weight: bold;
     margin-right: 15px;
     font-size: 16px;
-}
-
-.title {
+    flex-shrink: 0; /* nomor jangan mengecil */
+  }
+  
+  .title {
     font-size: 16px;
     color: #eee;
-    line-height: 1.5;
-}
+    line-height: 1.6;
+    text-align: left;
+    flex: 1; 
+    word-wrap: break-word; /* biar teks gak keluar kotak */
+  }
+
+  .number {
+    transition: transform 0.6s ease;
+    cursor: pointer;
+  }
+  
+  .number:hover {
+    transform: scale(1.1) rotate(5deg);
+  }  
+  
+  .card,
+  .news-cards,
+  .short-card {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  }
+  
 
 .footer {
     background: linear-gradient(to bottom, #4e4b52, #2c2b30);
@@ -397,7 +421,7 @@ body {
     background: linear-gradient(to right, #232526, #414345);
     color: white;
     box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease;
+    transition: left 0.3s ease-out;
     z-index: 1000;
     padding: 24px;
 }

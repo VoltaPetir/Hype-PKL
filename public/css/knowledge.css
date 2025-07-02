@@ -1,0 +1,228 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #2c2b30, #4e4b52);
+    background-attachment: fixed;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2vh 8vw;
+    background: rgba(44, 43, 48, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.nav-links li a:hover {
+    color: black;
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 120px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 7vh;
+    text-align: center;
+    margin-bottom: 7vh;
+    color: #cccccc;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.card {
+    color: #c0c0c0;
+    width: 50vw;
+    height: 70vh;
+    margin-bottom: 5vh;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3 ease;
+    margin-left: 1.7vw;
+    text-align: center;
+}
+
+.card-img {
+    width: 60%;
+    display: inline-block;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.content {
+    padding: 1vw;
+}
+
+.content a {
+    color: #ffffff;
+}
+
+.hamburger {
+    font-size: 28px;
+    padding: 16px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    z-index: 1001;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Sembunyikan hamburger saat menu terbuka */
+#menu-toggle:checked+.hamburger {
+    display: none;
+}
+
+/* Offcanvas style */
+.offcanvas {
+    position: fixed;
+    top: 0;
+    left: -200vw;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to right, #232526, #414345);
+    color: white;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.offcanvas nav a {
+    display: block;
+    margin: 16px 0;
+    text-decoration: none;
+    color: #fffbfb;
+    font-weight: 500;
+}
+
+/* Close button inside */
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
+
+/* Open when checkbox checked */
+#menu-toggle:checked~.offcanvas {
+    left: 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* tengah vertikal kalau perlu */
+    margin: 40px auto; /* tengah horizontal */
+    flex-wrap: wrap;
+    width: fit-content; /* biar ukurannya sesuai isi */
+  }  
+
+.pagination a {
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pagination a:hover {
+    background-color: red;
+    color: white;
+}
+
+.pagination a.active {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+}
+
+.footer {
+    background: linear-gradient(to bottom, #4e4b52, #2c2b30);
+    color: #fff;
+    text-align: center;
+    padding: 24px;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    margin-top: 1vh;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.6));
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+
+@media (max-width: 768px) {
+    Add commentMore actions .latest-news-container {
+        flex-direction: column;
+    }
+}

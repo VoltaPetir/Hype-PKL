@@ -22,19 +22,19 @@
             <aside class="offcanvas">
                 <label for="menu-toggle" class="close-btn">×</label>
                 <nav>
-                    <h3>Menu</h3>
-                    <a href="#">Trending</a>
-                    <a href="#">Topik</a>
-                    <a href="#topik">Category</a>
-                    <a href="#">Shorts</a>
-                    <a href="#">Tentang Kita?</a>
+                    <h3>Category</h3>
+                    <a href="/home">Home</a>
+                    <a href="/lifestyle">Lifestyle</a>
+                    <a href="/music">Music</a>
+                    <a href="/sport">Sport</a>
+                    <a href="/knowledge">Knowledge</a>
+                    <a href="/other">Other</a>
                 </nav>
             </aside>
 
             <ul class="nav-links">
                 <li><a href="#trending">Trending</a></li>
                 <li><a href="#topik">Topik</a></li>
-                <li><a href="#topik">Category</a></li>
                 <li><a href="#shorts">Shorts</a></li>
                 <li><a href="">Tentang Kita?</a></li>
             </ul>
@@ -42,9 +42,9 @@
 
         <div class="slider-container">
             <div class="slider">
-                <img src="{{ asset('image/iseo.jpg') }}" alt="Slide 1">
-                <img src="{{ asset('image/iseo.jpg') }}" alt="Slide 2">
-                <img src="{{ asset('image/iseo.jpg') }}" alt="Slide 3">
+                <img src="{{ asset('image/liz.jpg') }}" alt="Slide 1">
+                <img src="{{ asset('image/gaeul-ive.jpg') }}" alt="Slide 2">
+                <img src="{{ asset('image/wonyoung.webp') }}" alt="Slide 3">
             </div>
 
             <button class="prev" onclick="prevSlide()">❮</button>
@@ -55,37 +55,17 @@
     <section class="section" id="trending">
         <h2 class="section-title">Berita Tren</h2>
         <div class="container">
-
-            <!-- Card 1 -->
+            @foreach ($beritaTrending as $berita)
             <article class="card">
-                <img src="{{ asset('image/iseo.jpg') }}" alt="">
+                <img src="{{ asset('storage/' . $berita->gambar) }}" alt="gambar">
                 <div class="content">
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>{{ Str::limit($berita->isi, 100) }}</p>
                     <a href="#">Baca Selengkapnya →</a>
                 </div>
             </article>
-
-            <!-- Card 2 -->
-            <article class="card">
-                <img src="{{ asset('image/iseo.jpg') }}" alt="">
-                <div class="content">
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#">Baca Selengkapnya →</a>
-                </div>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="card">
-                <img src="{{ asset('image/iseo.jpg') }}" alt="">
-                <div class="content">
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#">Baca Selengkapnya →</a>
-                </div>
-            </article>
-
+            @endforeach
         </div>
     </section>
-
 
     <section class="news-section" id="topik">
         <div class="news-headline-container">
@@ -97,18 +77,18 @@
 
                 <!-- News Card 1 -->
                 <article class="news-cards">
-                    <img src="{{ asset('image/iseo.jpg') }}" alt="thumb" class="thumb">
+                    <img src="{{ asset('image/wonyoung.webp') }}" alt="thumb" class="thumb">
                     <div class="news-contents">
                         <span class="category">Lorem Ipsum</span>
                         <h3 class="news-title">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
                         <p class="date">11 Juni 2025, 17:36 WIB</p>
-                        <button>Selengkapnya</button>
+                        <button><a href="/dh">Selengkapnya</a></button>
                     </div>
                 </article>
 
                 <!-- News Card 2 -->
                 <article class="news-cards">
-                    <img src="{{ asset('image/iseo.jpg') }}" alt="">
+                    <img src="{{ asset('image/liz.jpg') }}" alt="">
                     <div class="news-contents">
                         <span class="category">Lorem ipsum</span>
                         <h3>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
@@ -119,7 +99,7 @@
 
                 <!-- News Card 3 -->
                 <article class="news-cards">
-                    <img src="{{ asset('image/iseo.jpg') }}" alt="">
+                    <img src="{{ asset('image/gaeul-ive.jpg') }}" alt="">
                     <div class="news-contents">
                         <span class="category">Lorem Ipsum</span>
                         <h3>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
@@ -197,7 +177,7 @@
             <!-- Card Shorts 2-->
             <article class="short-card">
                 <div class="thumb-wrapper">
-                    <img src="{{ asset('image/iseo.jpg') }}" alt="thumbnail">
+                    <img src="{{ asset('image/wonyoung.webp') }}" alt="thumbnail">
                     <div class="play-button">▶</div>
                 </div>
                 <div class="short-desc">
@@ -209,7 +189,7 @@
             <!-- Card Shorts 3 -->
             <article class="short-card">
                 <div class="thumb-wrapper">
-                    <img src="{{ asset('image/iseo.jpg') }}" alt="thumbnail">
+                    <img src="{{ asset('image/gaeul-ive.jpg') }}" alt="thumbnail">
                     <div class="play-button">▶</div>
                 </div>
                 <div class="short-desc">
@@ -221,7 +201,7 @@
             <!-- Card Shorts 4 -->
             <article class="short-card">
                 <div class="thumb-wrapper">
-                    <img src="{{ asset('image/iseo.jpg') }}" alt="thumbnail">
+                    <img src="{{ asset('image/liz.jpg') }}" alt="thumbnail">
                     <div class="play-button">▶</div>
                 </div>
                 <div class="short-desc">
